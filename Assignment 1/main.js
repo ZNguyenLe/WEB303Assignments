@@ -21,7 +21,7 @@ $(document).ready(function(){
 	//spend2.replaceWith(spend);
 
 	function gadget(){
-		$('#spend').html('$ ' + (parseInt($("input#salary").val()) * parseInt($("input#percent").val()) / 100));
+		$('#spend').html('$ ' + (parseInt($("input#salary").val()) * parseInt($("input#percent").val()) / 100).toFixed());
 	};
 
 });
