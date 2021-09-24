@@ -4,7 +4,6 @@
 $(document).ready(function() {
     $("a#vprospect").click(function(){
         $("div").load("prospect.html");
-        $("#solution").fadeIn();
     });
 });
 
@@ -19,3 +18,4 @@ $(document).ready(function() {
         $("div").load("retain.html");
     });
 });
+
