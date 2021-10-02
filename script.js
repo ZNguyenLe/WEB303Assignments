@@ -1,3 +1,4 @@
+//Coded by: Nguyen Le
 // Using the $.getJSON() Method
 $(document).ready(function() {      
     $.getJSON("team.json", function(team) {                     //calling the function to grab the data from the team.json file
