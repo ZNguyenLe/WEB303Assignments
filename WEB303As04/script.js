@@ -25,7 +25,7 @@ $(document).ready(function(){
                     $('#youarehere').append('<h2>Your previous location was at </h2>' + position.coords.latitude + " , " + position.coords.longitude);
                     localStorage.setItem(lat2, position.coords.latitude);
                     localStorage.setItem(lon2, position.coords.longitude); 
-                    $('#youarehere').append("<h2>You have moved a Distance of </h2>" + calcDistance(lat1, lon1, lat2, lon2));  
+                    $('#youarehere').append("<h2>You have moved a Distance of </h2>" + calcDistance(lat1, lon1, lat2, lon2) + " kilometers.");  
         }
     }, () => {
        $('#youarehere').append("<h3>The Geolocation you are trying to access is not available. Please allow location in order for the page to work.</h3>");
