@@ -4,9 +4,13 @@
 */
 
 $(document).ready(function(){
-
     // your code here
     class ContentCard {
+        //properties 
+        id; 
+        title; 
+        description; 
+        category;
 
         constructor(id,title,description,category) {
             this.id = id;
@@ -14,27 +18,37 @@ $(document).ready(function(){
             this.description = description;
             this.category = category;
         }
-        
         updateContent(title,description,category) {
-            title = this;
-            description = this;
-            category = this;
-        };
+            if(title,description,category) {
+            this.title = title;
+            this.description = description;
+            this.category = category;
+            }
+        }
         toString() {
-            
+            return `
+                    <div id="content-${this.id}">
+						<h4>${this.title}</h4>
+						<p>${this.description}</p>
+						<div>${this.category}</div>
+					</div>
+                    `;
         }
     }
     console.log(ContentCard);
 //------------------------------------------------------------------------------
 //  Array of 5 content cards (games i guess)
-    let gameArray = new Array ("Fortnite", "Valorant", "League of Legends", "Tomb Raider", "Risk of Rain");
-    console.log(gameArray);
-    // const card = {
-    //     id = $this,
-    //     title = $this,
-    //     description = $this,
-    //     category = $this
-    //     };
+    let MMOGame = [ new ContentCard (0, "Genshin Impact", "Open World", "MMORPG"),
+                    new ContentCard (1, "SoulWorker", "Not Open World", "MMORPG"),
+                    new ContentCard (2, "Warframe", "Sci-Fi", "MMOTPS"),
+                    new ContentCard (3, "Enlisted", "Historical", "MMOFPS"),
+                    new ContentCard (4, "Lineage 2 Essence", "Fantasy", "MMORPG")
+                  ];
+    console.log(MMOGame);
+    //display the array on page
+    MMOGame.forEach(function(g, game) {
+        $('#content-list').append(MMOGame[game].toString());
+    });
 });
 
 
