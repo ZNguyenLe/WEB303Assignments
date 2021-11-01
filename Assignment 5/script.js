@@ -6,11 +6,11 @@
 $(document).ready(function(){
     // your code here
     class ContentCard {
-        //properties 
-        id; 
-        title; 
-        description; 
-        category;
+        //it still worked without the properties 
+        // id; 
+        // title; 
+        // description; 
+        // category;
 
         constructor(id,title,description,category) {
             this.id = id;
