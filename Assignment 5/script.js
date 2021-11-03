@@ -19,10 +19,14 @@ $(document).ready(function(){
             this.category = category;
         }
         updateContent(title,description,category) {
-            if(title,description,category) {
-            this.title = title;
-            this.description = description;
-            this.category = category;
+            if(title) {
+                this.title = title;
+            }
+            if(description) {
+                this.description = description;
+            }
+            if(category) {
+                this.category = category;
             }
         }
         toString() {
@@ -50,5 +54,3 @@ $(document).ready(function(){
         $('#content-list').append(MMOGame[game].toString());
     });
 });
-
-
