@@ -1,13 +1,22 @@
 $(document).ready(function() {
-        $('#accordion').on('click', '#control', function (n) {
-            n.preventDefault();
-            // $(this).next().slideToggle(1000);
-            $('#apanel').not($(this).next()).toggleClass('active');
-            $(this).next('#apanel').slideToggle(1000);
-            $('#apanel').not($(this)).removeClass('active');
-            console.log('please work qwq');
+        $('#accordion').on('click', '#control', function () {
+            $(this).next().addClass('active').slideDown(1000); //add class and slide down and show content
+            $('.active').not($(this).next()).removeClass('active').slideUp(1000); // remove class and slide up and hide content
+            $(this).next('#apanel').show(); // if another panel is clicked, repeat lines 3 and 4
+            console.log('please work qwq'); // crying for this code to work. 
     });
-    
+    $('#accordion2').on('click', '#control2', function () {
+        $(this).next().addClass('active2').slideDown(1000); //add class and slide down and show content
+        $('.active2').not($(this).next()).removeClass('active2').slideUp(1000); // remove class and slide up and hide content
+        $(this).next('#apanel2').show(); // if another panel is clicked, repeat lines 3 and 4
+        console.log('please work qwq on acc2'); // crying for this code to work. 
+});
+        // $('#accordion2').click(function() {
+        //     $(this)
+        //     .toggleClass('active')
+        //     .next("#apanel2")
+        //     .slideToggle(1000);
+        // });
 });
 
 $(document).ready(function() {

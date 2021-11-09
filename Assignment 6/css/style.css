@@ -12,6 +12,11 @@ ul {
 #accordion{
     padding: 0px;
 }
+img {
+    width: 150px;
+    position: relative;
+    display: inline-block;
+}
 #accordion li a{
     display: block;
     background-color: green;
@@ -27,6 +32,23 @@ ul {
     border-bottom: 10px;
 }
 
+#accordion2 {
+    padding: 0px;
+}
+#accordion2 li a{
+    display: block;
+    background-color: green;
+    border: 1px solid #00ff1f;
+    border-bottom: 0px;
+    color: #000;
+    text-decoration: none;
+}
+#accordion2 li:last-child a{
+    border-bottom: 1px solid #000;
+}
+#accordion2 li:last-child #accordion li.control.active{
+    border-bottom: 10px;
+}
 a {
     font-size: 20px;
 }
@@ -39,6 +61,22 @@ a {
     text-align: center;
     background-color: #fff;
     font-size: 20px;
+}
+#apanel2 {
+    display: none;
+    padding: 16px;
+    border: 1px solid #3f0;
+    border-top: 0;
+    border-bottom: 0;
+    text-align: center;
+    background-color: #fff;
+    font-size: 20px;
+}
+#apanal .active{
+    display: block;
+}
+#apanal2 .active {
+    display: block;
 }
 #accordion li:last-child #apanel{
     border-bottom: 1px solid rgb(0, 255, 34);
@@ -56,21 +94,29 @@ a {
 
 .paneltab {
     display: none;
-
 }
 
 .paneltab.active {
+    padding: 20px;
+    background-color: #fff;
     display: block;
+    border: 25px solid green;
 }
 
 #tablist {
     list-style-type: none;
     position: relative;
-    z-index: 10;
-    background-color: #3f0;
-    padding: 5px;
+    background-color: green;
+    width: 100%;
+    padding: 0;
 }
-
+#controltab {
+    border-top: 2px solid black;
+    background-color: lightgreen;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    font-size: 25px;
+}
 #tablist li {
     display: inline-block;
 }
