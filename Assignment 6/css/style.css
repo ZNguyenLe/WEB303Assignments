@@ -114,6 +114,7 @@ a {
 }
 
 #tablist {
+    border-radius: 30%;
     list-style-type: none;
     position: relative;
     background-color: green;
