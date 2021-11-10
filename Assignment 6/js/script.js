@@ -1,3 +1,5 @@
+//Script by Nguyen Le
+
 $(document).ready(function() {
         $('#accordion').on('click', '#control', function () {
             $(this).next().addClass('active3').slideDown(1000); //add class and slide down and show content
