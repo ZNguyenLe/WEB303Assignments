@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+    max-width: 960px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+.thumbnails {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.active {
+    border: 5px solid green;
+}
+
+h2 {
+    text-align: center;
+}
