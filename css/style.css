@@ -10,10 +10,19 @@ body {
     padding-top: 20px;
 }
 
-.active {
-    border: 5px solid green;
+.thumbnails .thumb img .active {
+    border: 1px solid green;
 }
 
 h2 {
     text-align: center;
+}
+
+body > .photo-frame{
+    display: none;
+}
+.modal {
+    position: absolute;
+    z-index: 1000;
+    background-color:#0f0;
 }
