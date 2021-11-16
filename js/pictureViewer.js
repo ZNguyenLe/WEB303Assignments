@@ -5,9 +5,9 @@ $.fn.photoViewer = function() {
         let cache = {   // caching image
             
         };
-        let $frame = $('.photo-frame');     // both containers
-        let $thumbs = $('.thumb');
-        $frame.addClass('is-loading');
+        let $frame = $('.photo-frame');     // container 1
+        let $thumbs = $('.thumb');          // container 2
+        $frame.addClass('is-loading');      // adds the is-loading class on an image. 
 
         this.on('click', '.thumb', function(e) {
             let $img;

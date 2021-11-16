@@ -49,7 +49,7 @@ $(function () {
         }
     }
     
-    //let $content = $('.photo-frame').detach();
+    //let $content = $('.photo-frame').detach(); <--- this made my code go boom
     let modal = new Modal();
     $('.photo-frame').on('click', function() {
         modal.open({
