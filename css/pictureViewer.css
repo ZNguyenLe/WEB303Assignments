@@ -36,5 +36,9 @@
 
 .active {
     display: inline-block;
-    border-bottom: 10px solid green;
+    border: 5px solid green;
+}
+
+.modal {
+    border: 5px solid green;
 }
