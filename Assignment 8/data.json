@@ -1,0 +1,64 @@
+{
+    "friends": [
+        {
+            "name": "Jennifer Aniston",
+            "gender": "Female",
+            "birthday": "Febuary 11, 1969",
+            "episodes" : "235 Episodes"
+        },
+        {
+            "name": "Lisa Kudrow",
+            "gender": "Female",
+            "birthday": "June 15, 1964",
+            "episodes": "235 Episodes"
+        },
+        {
+            "name": "Courteny Cox",
+            "gender": "Female",
+            "birthday": "July 30, 1963",
+            "episodes": "235 Episodes"
+        },
+        {
+            "name": "Matt LeBlanc",
+            "gender": "Male",
+            "birthday": "July 25, 1967",
+            "episodes": "235 Episodes"
+        },
+        {
+            "name": "Matthew Perry",
+            "gender": "Male",
+            "birthday": "August 19, 1969",
+            "episodes": "235 Episodes"
+        },
+        {
+            "name": "David Schwimmer",
+            "gender": "Male",
+            "birthday": "November 2, 1966",
+            "episodes": "235 Episodes"
+        },
+        {
+            "name": "James Michael Tyler",
+            "gender": "Male",
+            "birthday": "May 28, 1962",
+            "episodes": "56 Episodes"
+        },
+        {
+            "name": "Christina Pickles",
+            "gender": "Female",
+            "birthday": "Febuary 17, 1935",
+            "episodes": "19 Episodes"
+        },
+        {
+            "name": "Maggie Wheeler",
+            "gender": "Female",
+            "birthday": "August 7, 1961",
+            "episodes": "18 Episodes"
+        },
+        {
+            "name": "Paul Rudd",
+            "gender": "Male",
+            "birthday": "April 6, 1969",
+            "episodes": "17 Episodes"
+        }
+    ]
+}
