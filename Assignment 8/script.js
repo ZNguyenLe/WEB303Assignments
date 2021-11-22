@@ -1,15 +1,43 @@
-let results = [];
-
 $(function() {
-    contentRows();
     searchName();
     button();
+    makeRows();
+    update();
 });
+
+let rows = [];
+    $min = $('#value-min');
+    $max = $('#value-max');
+    $table = $('#rates');
+
+function makeRows() {
+    contentRows();
+    cast.each(function(person) {
+        let $row = $('<tr></tr>');
+        $row.append($('<td></td>').text(person.name));
+        $row.append($('<td></td>').text(person.episodes));
+        rows.push({
+            person: person,
+            $element: $row
+        });
+    });
+}
+
+function update(min, max) {
+    rows.forEach(function(row) {
+        if (row.person.episodes >= min && row.person.episodes <= max) {
+            row.$element.show();
+        } else {
+            row.$element.hide();
+        }
+    });
+}
 
 function contentRows(){
     $.getJSON("cast.json", function(results){
         $.each(results["cast"],function(i,field){
             $("#table").append("<tr><td><p>" + field['name'] + "</p></td><td><p>" + field['gender'] + "</p></td><td><p>" + field['episodes'] + "</p></td><td><p>" + field['birthday'] + "</p></td></tr>");
+      
         });
     });
 }
@@ -49,58 +77,60 @@ function filter() {
 };
 
 function button(){
-    // let Names = $('#tbody tr');
-    // let $buttons = $('#buttons');
-    // let tagged = {};
+    let Names = $('#tbody tr');
+    let $buttons = $('#buttons');
+    let tagged = {};
 
-    // Names.each(function() {
-    //     let name = this;
-    //     let tags = $(this).data('tags');
-    //     if (tags) {
-    //         tags.split(',').forEach(function(tagName) {
-    //             if (tagged[tagName] == null) {
-    //                 tagged[tagName] = [];
-    //             }
-    //             tagged[tagName].push(name);
-    //         })
-    //     }
-    // });
-    // $('<button/>', {
-    //     text: 'A - M',
-    //     class: 'active',
-    //     click: function() {
-    //         $(this).addClass('active').sibling().removeClass('active');
-    //         console.log('clicked');
-    //         Names.show();
-    //     }
-    // }).appendTo($buttons);
-    // $('<button/>', {
-    //     text: 'M - Z',
-    //     class: 'active',
-    //     click: function() {
-    //         $(this)
-    //         .addClass('active')
-    //         .sibling()
-    //         .removeClass('active');
-    //         Names.show();
-    //     }
-    // }).appendTo($buttons);
-    // $.each(tagged, function(tagName) {
-    //     $('<button/>', {
-    //         text: tagName + ' (' + tagged[tagName].length + ')',
-    //         click: function() {
-    //             $(this).addClass('active').sibling().removeClass('active');
-    //             Names.hide().filter(tagged[tagName]).show();
-    //         }
-    //     }).appendTo($buttons);
-    // })
-    // console.log($buttons);
+    Names.each(function() {
+        let name = this;
+        let tags = $(this).data('tags');
+        if (tags) {
+            tags.split(',').forEach(function(tagName) {
+                if (tagged[tagName] == null) {
+                    tagged[tagName] = [];
+                }
+                tagged[tagName].push(name);
+            })
+        }
+    });
     $('#buttons').each(function() {
         $(this).on('click', function() {
             let filterTag = $(this).attr('class');
             $('tr').addClass('active');
             $('tr:not(.' + filterTag + ')').hide();
-            $search.val()
+            //$search.val()
         })
     })
+    $('<button/>', {
+        text: 'A - M',
+        class: 'active',
+        click: function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            console.log('clicked');
+            Names.show();
+        }
+    }).appendTo($buttons);
+    $('<button/>', {
+        text: 'M - Z',
+        class: 'active',
+        click: function() {
+            $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active');
+            Names.show();
+        }
+    }).appendTo($buttons);
+    $.each(tagged, function(tagName) {
+        $('<button/>', {
+            text: tagName + ' (' + tagged[tagName].length + ')',
+            click: function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                Names.hide().filter(tagged[tagName]).show();
+            }
+        }).appendTo($buttons);
+    })
+    console.log($buttons);
+    
 }
+
