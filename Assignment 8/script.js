@@ -9,19 +9,7 @@ let rows = [];
     $min = $('#value-min');
     $max = $('#value-max');
     $table = $('#rates');
-
-function makeRows() {
-    contentRows();
-    cast.each(function(person) {
-        let $row = $('<tr></tr>');
-        $row.append($('<td></td>').text(person.name));
-        $row.append($('<td></td>').text(person.episodes));
-        rows.push({
-            person: person,
-            $element: $row
-        });
-    });
-}
+    cast = [];
 
 function update(min, max) {
     rows.forEach(function(row) {
@@ -36,7 +24,30 @@ function update(min, max) {
 function contentRows(){
     $.getJSON("cast.json", function(results){
         $.each(results["cast"],function(i,field){
-            $("#table").append("<tr><td><p>" + field['name'] + "</p></td><td><p>" + field['gender'] + "</p></td><td><p>" + field['episodes'] + "</p></td><td><p>" + field['birthday'] + "</p></td></tr>");
+             let $row = $('<tr><td><p>" + field['name'] + "</p></td><td><p>" + field['gender'] + "</p></td><td><p>" + field['episodes'] + "</p></td><td><p>" + field['birthday'] + "</p></td></tr>');
+                cast.push({
+                    person: field['name'],
+                    $element: $row
+                });
+            });
+            /*
+                cast = [{
+                    person: "Jennifer Aniston",
+                    $element: $JennifersRow
+                },{
+                    
+                }];
+
+                cast[0].$element.hide();
+
+                for each cast member in the cast array{
+                    if (cast member [current index] .first letter is between a and M)
+                        show this cast members row
+                    else
+                        hide the cast members row
+                }
+            */
+            $("#table").append($row);
       
         });
     });
@@ -107,6 +118,8 @@ function button(){
         click: function() {
             $(this).addClass('active').siblings().removeClass('active');
             console.log('clicked');
+
+
             Names.show();
         }
     }).appendTo($buttons);
