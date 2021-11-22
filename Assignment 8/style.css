@@ -1,0 +1,24 @@
+body {
+    background-color: lightblue;
+    max-width: 960px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border: 5px solid green;
+}
+table {
+    padding: 15px;
+}
+
+div {
+    border: 5px solid blue;
+}
