@@ -121,8 +121,7 @@ function button(){
             console.log('clicked');
             Names.show();
             $.each(cast, function() {
-                let something = field['name'].charAt(0);
-                if(something <= "M") {
+                if(cast <= "M") {
                     $("p").show();
                 } else {
                     $("p").hide();
