@@ -1,7 +1,7 @@
 $(function() {
+    contentRows();
     searchName();
     button();
-    makeRows();
     update();
 });
 
@@ -23,39 +23,40 @@ function update(min, max) {
 
 function contentRows(){
     $.getJSON("cast.json", function(results){
-        $.each(results["cast"],function(i,field){
-             let $row = $('<tr><td><p>" + field['name'] + "</p></td><td><p>" + field['gender'] + "</p></td><td><p>" + field['episodes'] + "</p></td><td><p>" + field['birthday'] + "</p></td></tr>');
+        $.each(results["cast"],function(i, field){
+             let $row = $('<tr><td><p>' + field['name'] + "</p></td><td><p>" + field['gender'] + "</p></td><td><p>" + field['episodes'] + "</p></td><td><p>" + field['birthday'] + '</p></td></tr>');
                 cast.push({
                     person: field['name'],
                     $element: $row
                 });
+                $("#table").append($row);
             });
-            /*
-                cast = [{
-                    person: "Jennifer Aniston",
-                    $element: $JennifersRow
-                },{
+            
+            
+
+            
+                // cast = [{
+                //     person: "Jennifer Aniston",
+                //     $element: $JennifersRow
+                // },{
                     
-                }];
-
-                cast[0].$element.hide();
-
-                for each cast member in the cast array{
-                    if (cast member [current index] .first letter is between a and M)
-                        show this cast members row
-                    else
-                        hide the cast members row
-                }
-            */
-            $("#table").append($row);
+                // }];
+                // cast[0].$element.hide();
+                // for each cast member in the cast array{
+                //     if (cast member [current index] .first letter is between a and M)
+                //         show this cast members row
+                //     else
+                //         hide the cast members row
+                // }
+            
+            
       
         });
-    });
+        
 }
 
 function searchName(){
     $('#search').keydown(function() {
-        
         let $names = $('#name');
         let $search = $('#search');
         let cache = [];
@@ -88,13 +89,13 @@ function filter() {
 };
 
 function button(){
-    let Names = $('#tbody tr');
+    let Names = $('#tbody p');
     let $buttons = $('#buttons');
     let tagged = {};
 
     Names.each(function() {
         let name = this;
-        let tags = $(this).data('tags');
+        let tags = $(this).data('cast');
         if (tags) {
             tags.split(',').forEach(function(tagName) {
                 if (tagged[tagName] == null) {
@@ -104,23 +105,30 @@ function button(){
             })
         }
     });
-    $('#buttons').each(function() {
-        $(this).on('click', function() {
-            let filterTag = $(this).attr('class');
-            $('tr').addClass('active');
-            $('tr:not(.' + filterTag + ')').hide();
-            //$search.val()
-        })
-    })
+    // $('#buttons').each(function() {
+    //     $(this).on('click', function() {
+    //         let filterTag = $(this).attr('class');
+    //         $('tr').addClass('active');
+    //         $('tr:not(.' + filterTag + ')').show();
+    //         //$search.val()
+    //     })
+    // })
     $('<button/>', {
         text: 'A - M',
         class: 'active',
         click: function() {
             $(this).addClass('active').siblings().removeClass('active');
             console.log('clicked');
-
-
             Names.show();
+            $.each(cast, function() {
+                let something = field['name'].charAt(0);
+                if(something <= "M") {
+                    $("p").show();
+                } else {
+                    $("p").hide();
+                }
+                console.log(cast);
+            })
         }
     }).appendTo($buttons);
     $('<button/>', {
@@ -132,6 +140,15 @@ function button(){
             .siblings()
             .removeClass('active');
             Names.show();
+            console.log('clicked');
+            $.each(cast, function() {
+                if(cast >= "M") {
+                    $("p").show();
+                } else {
+                    $("p").hide();
+                }
+                console.log(cast);
+            })
         }
     }).appendTo($buttons);
     $.each(tagged, function(tagName) {
@@ -146,4 +163,3 @@ function button(){
     console.log($buttons);
     
 }
-
