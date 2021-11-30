@@ -1,0 +1,47 @@
+body {
+    background-color: lightblue;
+    max-width: 960px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border: 5px solid green;
+}
+#thead {
+    background-color: lightgreen;
+}
+table {
+    width: 100%;
+    padding: 15px;
+}
+
+div {
+    border: 5px solid blue;
+}
+p {
+    padding: 5px;
+    font-weight: bold;
+    border: 2px solid black;
+    text-align: center;
+}
+
+button {
+    width: 50%;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.ascending::after {
+     content: "\25b2"
+}
+.descending::after {
+    content: "\25bc"
+}

@@ -1,0 +1,64 @@
+{
+    "cast": [
+        {
+            "name": "Jennifer Aniston",
+            "gender": "Female",
+            "birthday": "1969-02-11",
+            "episodes" : 235
+        },
+        {
+            "name": "Lisa Kudrow",
+            "gender": "Female",
+            "birthday": "1964-06-15",
+            "episodes": 235
+        },
+        {
+            "name": "Courteny Cox",
+            "gender": "Female",
+            "birthday": "1963-07-30",
+            "episodes": 235
+        },
+        {
+            "name": "Matt LeBlanc",
+            "gender": "Male",
+            "birthday": "1967-07-25",
+            "episodes": 235
+        },
+        {
+            "name": "Matthew Perry",
+            "gender": "Male",
+            "birthday": "1969-08-19",
+            "episodes": 235
+        },
+        {
+            "name": "David Schwimmer",
+            "gender": "Male",
+            "birthday": "1966-11-02",
+            "episodes": 235
+        },
+        {
+            "name": "James Michael Tyler",
+            "gender": "Male",
+            "birthday": "1962-05-28",
+            "episodes": 56
+        },
+        {
+            "name": "Christina Pickles",
+            "gender": "Female",
+            "birthday": "1935-02-17",
+            "episodes": 19
+        },
+        {
+            "name": "Maggie Wheeler",
+            "gender": "Female",
+            "birthday": "1961-08-07",
+            "episodes": 18 
+        },
+        {
+            "name": "Paul Rudd",
+            "gender": "Male",
+            "birthday": "1969-04-06",
+            "episodes": 17
+        }
+    ]
+}
