@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <div id="main">
+    <div id="container login">
         
-    </div>
-    <div>
-        <h2>username:</h2>
-        
-    </div>
-    <form id="newPwd">
-    <div>
-        <fieldset>
-            <legend>username:</legend>
-                <input type="username" placeholder="username">
-            <legend>Password:</legend>
-                <label for="pwd">New Password (10 characters)</label>
-                <input type="password" placeholder="Password" id="pwd">
-                <span id="pwd-count" class="hide"></span>
-                <legend>Confirm Password:</legend>
-                <input type="password" placeholder="Password" id="password">
-            <label>
-                <input type="checkbox" name="tos" value="tos">I accept the terms of service
-            </label>
-        <input type="submit" id="submit" value="submit">
-    </fieldset>
-    </div>
+    
+    <form id="newPwd" action="/login" method="post">
+        <div id="">
+            <fieldset>
+                <legend>Form:</legend>
+                <label> Username </label><br>
+                    <input type="username" placeholder="username" id="username">
+                <legend>Password (10 characters):</legend>
+                    <input name="password" type="password" placeholder="Password" id="pwd"><span id="pwd-count" class="hide"></span><br>
+                    
+                    <label for="pwd">Confirm Password </label><br>
+                    <input name="confirmpassword" type="password" placeholder="Password" id="pwd2">
+                    
+                    <span id='message'></span>
+                    <br>
+                    <br>
+                    <select id="country" name="country">
+                        <option value="choose">Select your Country</option>
+                    </select><br>
+                <label>
+                    <input type="checkbox" name="tos" value="tos">I accept the terms of service
+                </label>
+                <input type="submit" id="submit" value="submit">
+            </fieldset>
+        </div>
 </form>
+</div>
 </body>
-<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="disableSubmit.js"></script>
+<script src="countries.js"></script>
+
 </html>
 
