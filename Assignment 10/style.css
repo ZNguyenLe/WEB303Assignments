@@ -1,0 +1,13 @@
+html {
+    max-width: 960px;
+    margin: auto;
+}
+body {
+    background-color: aqua;
+}
+form {
+    padding: 30px;
+    border-radius: 5%;
+    background-color: white;
+    
+}
